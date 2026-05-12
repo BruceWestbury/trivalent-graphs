@@ -60,9 +60,7 @@ Thumbs.db
 *.txt
 *.bak
 *.tmp
-*.cache
 *.ipynb
-cache/
 notebooks/*
 !notebooks/marimo/
 !notebooks/marimo/*.py
