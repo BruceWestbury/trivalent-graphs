@@ -90,9 +90,7 @@ def helper_functions(re, shutil):
         for path in paths:
             t = vertex_count_from_cache_name(path.name)
             if t in result:
-                raise ValueError(
-                    f"More than one cache file in {cache_dir} has t={t}."
-                )
+                raise ValueError(f"More than one cache file in {cache_dir} has t={t}.")
             result[t] = path
         return result
 
@@ -104,7 +102,9 @@ def helper_functions(re, shutil):
                 "Install Graphviz, then restart this notebook."
             )
 
-    def selected_cache_item_markdown(mo, family_value, kind_value, cache_path, index, cache):
+    def selected_cache_item_markdown(
+        mo, family_value, kind_value, cache_path, index, cache
+    ):
         """Markdown summary of the current cache selection."""
         return mo.md(
             """
@@ -232,8 +232,6 @@ def vertex_count_selector(mo, vertex_counts):
         value=vertex_counts[0],
         label="Number of trivalent vertices",
     )
-
-    vertex_count
     return (vertex_count,)
 
 
