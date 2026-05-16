@@ -121,7 +121,48 @@ cached canonical DartGraphs
 
 rather than Sage graphs.
 
+# Stable Identifiers
+
+Closed graphs are identified by canonical graph keys.
+
+Sources are identified by stable source keys.
+
+Caches should reference existing identifiers rather than
+reconstructing them dynamically.
+
+# Cache Philosophy
+
+The public repository prioritises:
+
+- reproducibility;
+- inspectability;
+- stable exported data.
+
+The public website should consume cached computations
+generated offline by the research codebase.
+
+The browser layer should not perform substantial symbolic
+or graph-theoretic computation.
+
 ---
+
+# Cache Dependency Structure
+
+Caches are generated in stages.
+
+The dependency order is:
+
+1. closed graph caches
+2. source caches
+3. evaluation caches
+4. reduction trace caches
+
+Later stages may reference identifiers from earlier stages,
+but should not recompute them.
+
+The `cubic-jordan` repository generates the caches.
+
+The `trivalent-graphs` repository stores and presents them.
 
 # Cached Data
 
@@ -395,7 +436,7 @@ Create repository structure.
 
 Export cached DartGraphs from the research codebase.
 
-## Milestone 3
+## Milestone 3: Done
 
 Implement lightweight SymPy algebra layer.
 
@@ -407,7 +448,7 @@ Implement reduction tracing.
 
 Implement SVG rendering.
 
-## Milestone 6
+## Milestone 6: Evaluations done
 
 Export cached F4 reductions and evaluations.
 
